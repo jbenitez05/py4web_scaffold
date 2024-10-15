@@ -12,7 +12,7 @@ Work in Progress
 
 ```bash
   virtualenv -p python3 venv
-  source venv /bin/activated
+  source venv/bin/activated
 ```
 
 - Create a py4web directory and an apps subdirectory

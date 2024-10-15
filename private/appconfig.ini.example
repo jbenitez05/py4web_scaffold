@@ -1,0 +1,11 @@
+[db]
+uri       = sqlite://storage.sqlite
+pool_size = 10
+
+[server]
+mode = development
+
+[smtp]
+server = smtp.com:587
+sender = no-reply@example.net
+login = user:password

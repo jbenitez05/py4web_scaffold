@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Default</title>
+    <link rel="icon" type="image/x-icon" href="[[=URL('static','favicon.ico')]]">
+    
+    <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAAQEAAAEAIAAwAAAAFgAAACgAAAABAAAAAgAAAAEAIAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAA=="/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="[[=URL('static','css/no.css')]]">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
+    
+    [[block page_head]]
+    [[end]]
+
+  </head>
+  <body>
+    
+    [[include 'layouts/header.html']]
+
+    <section class="section">
+      <div>
+        <flash-alerts class="padded" data-alert="[[=globals().get('flash','')]]"></flash-alerts>
+      </div>
+      <div class="container">
+        [[include]]
+      </div>
+    </section>
+        
+    [[include 'layouts/footer.html']]
+
+  </body>
+  <script src="[[=URL('static','js/utils.js')]]"></script>
+  [[block page_scripts]]
+  [[end]]
+</html>

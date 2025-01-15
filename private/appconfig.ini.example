@@ -9,3 +9,9 @@ mode = development
 server = smtp.com:587
 sender = no-reply@example.net
 login = user:password
+
+[default]
+fist_name = John
+last_name = Doe
+email = user@example.com
+password = 12345

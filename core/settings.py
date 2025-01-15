@@ -111,3 +111,8 @@ SCHEDULER_MAX_CONCURRENT_RUNS = 1
 USE_CELERY = False
 CELERY_BROKER = "redis://localhost:6379/0"
 
+# DEFAULT USER
+DEFAULT_USER_FIRST_NAME = configuration.get('default','fist_name')
+DEFAULT_USER_LAST_NAME = configuration.get('default','last_name')
+DEFAULT_USER_EMAIL = configuration.get('default','email')
+DEFAULT_USER_PASSWORD = configuration.get('default','password')

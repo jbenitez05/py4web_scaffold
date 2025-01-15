@@ -11,6 +11,7 @@ from pydal.tools.tags import Tags
 from pydal.tools.scheduler import Scheduler
 from py4web.utils.factories import ActionFactory
 from . import settings
+from pydal.validators import CRYPT
 
 # #######################################################
 # implement custom loggers form settings.LOGGERS
@@ -212,3 +213,13 @@ auth.enable(uses=(session, T, db), env=dict(T=T))
 # #######################################################
 unauthenticated = ActionFactory(db, session, T, flash, auth)
 authenticated = ActionFactory(db, session, T, flash, auth.user)
+
+# Default user credentials
+if db(db.auth_user).count() == 0:
+    db.auth_user.insert(
+        first_name = settings.DEFAULT_USER_FIRST_NAME,
+        last_name = settings.DEFAULT_USER_LAST_NAME,
+        email = settings.DEFAULT_USER_EMAIL,
+        password = CRYPT()(settings.DEFAULT_USER_PASSWORD)[0]
+    )
+    db.commit()
